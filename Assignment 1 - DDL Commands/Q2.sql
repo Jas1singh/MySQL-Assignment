@@ -34,11 +34,12 @@ Q5. Display all records from the employee table.
 
 */
 
--- Q1. Create and use database
+
 CREATE DATABASE company_db;
+
 USE company_db;
 
--- Q2. Create employee table
+
 CREATE TABLE employee (
     employee_id INT PRIMARY KEY AUTO_INCREMENT,
     employee_name VARCHAR(50),
@@ -48,7 +49,7 @@ CREATE TABLE employee (
     salary INT
 );
 
--- Q3. Insert 10 employee records
+
 INSERT INTO employee
 (employee_name, age, department, designation, salary)
 VALUES
@@ -63,8 +64,8 @@ VALUES
 ('Ankit Tiwari', 28, 'Finance', 'Analyst', 65000),
 ('Riya Kapoor', 27, 'Marketing', 'Manager', 70000);
 
--- Q4. Display table structure
+
 DESC employee;
 
--- Q5. Display all records
+
 SELECT * FROM company_db.employee;

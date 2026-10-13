@@ -34,11 +34,12 @@ Q5. Display all records from the student table.
 
 */
 
--- Q1. Create and use database
+
 CREATE DATABASE if not EXISTS school_db;
+
 USE school_db;
 
--- Q2. Create student table
+
 CREATE TABLE student (
     student_id INT PRIMARY KEY AUTO_INCREMENT,
     student_name VARCHAR(50),
@@ -48,7 +49,7 @@ CREATE TABLE student (
     marks INT
 );
 
--- Q3. Insert 10 student records
+
 INSERT INTO student (student_name, age, course, city, marks)
 VALUES
 ('Rahul Sharma', 21, 'Python', 'Indore', 85),
@@ -62,8 +63,8 @@ VALUES
 ('Ankit Tiwari', 21, 'Python', 'Pune', 79),
 ('Riya Kapoor', 22, 'Java', 'Mumbai', 91);
 
--- Q4. Display table structure
+
 DESC student;
 
--- Q5. Display all records
+
 SELECT * FROM school_db.student;

@@ -34,11 +34,13 @@ Q5. Display all records from the product table.
 
 */
 
--- Q1. Create and use database
+
 CREATE DATABASE shop_db;
+
+
 USE shop_db;
 
--- Q2. Create product table
+
 CREATE TABLE product (
     product_id INT PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(50),
@@ -48,7 +50,8 @@ CREATE TABLE product (
     quantity INT
 );
 
--- Q3. Insert 10 product records
+
+
 INSERT INTO product
 (product_name, category, brand, price, quantity)
 VALUES
@@ -63,8 +66,8 @@ VALUES
 ('Webcam', 'Accessories', 'Logitech', 2500, 18),
 ('Speaker', 'Accessories', 'JBL', 4500, 16);
 
--- Q4. Display table structure
+
 DESC product;
 
--- Q5. Display all records
+
 SELECT * FROM shop_db.product;
