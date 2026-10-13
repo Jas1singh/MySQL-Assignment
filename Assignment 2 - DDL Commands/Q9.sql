@@ -1,4 +1,5 @@
-# Assignment 50 - MySQL 2 
+# Assignment 2 - DDL Commands
+
 /* Question 9: 
 
 You are designing a system to store movie reviews. Start with basic details and then evolve the table structure using ALTER, RENAME, TRUNCATE, and DROP, and perform INSERT operations at each stage.

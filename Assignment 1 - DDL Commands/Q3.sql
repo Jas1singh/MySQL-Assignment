@@ -1,6 +1,7 @@
 /*
- Assignment 49 - MySQL 1 
-''' Question 3: 
+# Assignment 1 - DDL Commands 
+
+Question 3: 
 PRODUCT MANAGEMENT SYSTEM
 
 Q1. Create a database named shop_db and use the database.

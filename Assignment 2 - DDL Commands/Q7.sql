@@ -1,4 +1,5 @@
-# Assignment 50 - MySQL 2 
+# Assignment 2 - DDL Commands
+
 /* Question 7: 
 
 Create and Insert into products Table

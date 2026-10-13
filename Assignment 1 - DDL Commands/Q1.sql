@@ -1,6 +1,7 @@
 /*
-Assignment 49 - MySQL 1 
-''' Question 1: 
+# Assignment 1 - DDL Commands
+
+Question 1: 
 STUDENT MANAGEMENT SYSTEM
 
 Q1. Create a database named school_db and use the database.

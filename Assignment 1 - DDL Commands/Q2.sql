@@ -1,6 +1,7 @@
 /*
- Assignment 49 - MySQL 1 
-''' Question 2: 
+# Assignment 1 - DDL Commands
+
+Question 2: 
 EMPLOYEE MANAGEMENT SYSTEM
 
 Q1. Create a database named company_db and use the database.
