@@ -9,6 +9,7 @@ Truncate all data from students table
 
 */
 
+
 TRUNCATE TABLE students;
 
 

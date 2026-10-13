@@ -97,9 +97,6 @@ VALUES
 SELECT * FROM movie_reviews;
 
 
-Rename reviewer_name to critic_name.
-
-
 ALTER TABLE movie_reviews
 RENAME COLUMN reviewer_name TO critic_name;
 

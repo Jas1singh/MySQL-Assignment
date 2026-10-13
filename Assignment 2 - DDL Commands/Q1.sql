@@ -25,6 +25,7 @@ Insert 5 different student records with dummy data.
 
 */
 
+
 CREATE TABLE students (
     id INT,
     name VARCHAR(100),

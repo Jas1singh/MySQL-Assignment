@@ -9,6 +9,7 @@ Rename books table to library_books
 
 */
 
+
 RENAME TABLE books TO library_books;
 
 
