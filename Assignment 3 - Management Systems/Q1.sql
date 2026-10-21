@@ -263,32 +263,22 @@ Then verify that your employees table contains all the required data types.
 */
 
 create DATABASE Employee_Management_System;
+
 use Employee_Management_System;
 
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY AUTO_INCREMENT,
     employee_code CHAR(6),
     employee_name VARCHAR(50),
-    age TINYINT UNSIGNED,
+    age TINYINT UNSIGNED CHECK (age <= 100),
     number_of_children SMALLINT UNSIGNED,
     experience_months MEDIUMINT UNSIGNED,
     salary DECIMAL(10,2),
     performance_score FLOAT,
     productivity_score DOUBLE,
-    department_id BIGINT UNSIGNED,
-    employee_status ENUM(
-        'ACTIVE',
-        'INACTIVE',
-        'ON_LEAVE',
-        'RESIGNED'
-    ),
-    skills SET(
-        'JAVA',
-        'PYTHON',
-        'MYSQL',
-        'REACT',
-        'AWS'
-    ),
+    department_id INT UNSIGNED,
+    employee_status ENUM('ACTIVE','INACTIVE','ON_LEAVE','RESIGNED'),
+    skills SET('JAVA','PYTHON','MYSQL','REACT','AWS'),
     gender ENUM('MALE', 'FEMALE', 'OTHER'),
     date_of_birth DATE,
     joining_date DATE,
