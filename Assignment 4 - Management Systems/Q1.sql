@@ -72,7 +72,9 @@ Find employees who are from Indore or Pune, working in IT, Finance, or HR, with 
 
 */
 
-use Employee_Management_System;
+CREATE database Employee_Management_System2;
+
+use Employee_Management_System2;
 
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
@@ -109,137 +111,86 @@ SELECT * FROM employees;
 
 
 
-SELECT * FROM employees
-WHERE salary > 60000;
+SELECT * FROM employees WHERE salary > 60000;
 
-SELECT * FROM employees
-WHERE salary < 50000;
+SELECT * FROM employees WHERE salary < 50000;
 
-SELECT * FROM employees
-WHERE age > 30;
+SELECT * FROM employees WHERE age > 30;
 
-SELECT * FROM employees
-WHERE experience >= 5;
+SELECT * FROM employees WHERE experience >= 5;
 
-SELECT * FROM employees
-WHERE department = 'IT'
-   OR department = 'Finance';
+SELECT * FROM employees WHERE department = 'IT' OR department = 'Finance';
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'HR', 'Sales');
+SELECT * FROM employees WHERE department IN ('IT', 'HR', 'Sales');
 
 
-SELECT * FROM employees
-WHERE department NOT IN ('IT', 'HR');
+SELECT * FROM employees WHERE department NOT IN ('IT', 'HR');
 
 
-SELECT * FROM employees
-WHERE city IN ('Indore', 'Pune');
+SELECT * FROM employees WHERE city IN ('Indore', 'Pune');
 
 
-SELECT * FROM employees
-WHERE city NOT IN ('Indore', 'Mumbai', 'Bhopal');
+SELECT * FROM employees WHERE city NOT IN ('Indore', 'Mumbai', 'Bhopal');
 
 
-SELECT * FROM employees
-WHERE salary BETWEEN 40000 AND 70000;
+SELECT * FROM employees WHERE salary BETWEEN 40000 AND 70000;
 
 
-SELECT * FROM employees
-WHERE age BETWEEN 25 AND 35;
+SELECT * FROM employees WHERE age BETWEEN 25 AND 35;
 
 
-SELECT * FROM employees
-WHERE experience BETWEEN 3 AND 7;
+SELECT * FROM employees WHERE experience BETWEEN 3 AND 7;
 
 
-SELECT * FROM employees
-WHERE joining_date BETWEEN '2022-01-01' AND '2025-12-31';
+SELECT * FROM employees WHERE joining_date BETWEEN '2022-01-01' AND '2025-12-31';
 
 
-SELECT * FROM employees
-WHERE joining_date < '2023-01-01';
+SELECT * FROM employees WHERE joining_date < '2023-01-01';
 
 
-SELECT * FROM employees
-WHERE joining_date >= '2025-01-01';
+SELECT * FROM employees WHERE joining_date >= '2025-01-01';
 
 
-SELECT * FROM employees
-WHERE city = 'Indore'
-  AND department = 'IT';
+SELECT * FROM employees WHERE city = 'Indore' AND department = 'IT';
 
 
-SELECT * FROM employees
-WHERE department = 'IT'
-  AND salary > 70000;
+SELECT * FROM employees WHERE department = 'IT' AND salary > 70000;
 
 
-SELECT * FROM employees
-WHERE salary BETWEEN 50000 AND 90000
-  AND experience > 4;
+SELECT * FROM employees WHERE salary BETWEEN 50000 AND 90000 AND experience > 4;
 
 
-SELECT * FROM employees
-WHERE (department = 'IT' OR department = 'Finance')
-  AND salary > 60000;
+SELECT * FROM employees WHERE (department = 'IT' OR department = 'Finance') AND salary > 60000;
 
 
-SELECT * FROM employees
-WHERE joining_date BETWEEN '2021-01-01' AND '2024-12-31'
-  AND salary > 50000;
+SELECT * FROM employees WHERE joining_date BETWEEN '2021-01-01' AND '2024-12-31' AND salary > 50000;
 
 
-SELECT * FROM employees
-WHERE salary NOT BETWEEN 40000 AND 70000;
+SELECT * FROM employees WHERE salary NOT BETWEEN 40000 AND 70000;
 
 
-SELECT * FROM employees
-WHERE department NOT IN ('IT', 'HR', 'Sales');
+SELECT * FROM employees WHERE department NOT IN ('IT', 'HR', 'Sales');
 
 
-SELECT * FROM employees
-WHERE joining_date NOT BETWEEN '2022-01-01' AND '2025-12-31';
+SELECT * FROM employees WHERE joining_date NOT BETWEEN '2022-01-01' AND '2025-12-31';
 
 
-SELECT * FROM employees
-WHERE city IN ('Indore', 'Pune')
-  AND salary BETWEEN 45000 AND 80000
-  AND experience > 3;
+SELECT * FROM employees WHERE city IN ('Indore', 'Pune') AND salary BETWEEN 45000 AND 80000 AND experience > 3;
 
 
-SELECT * FROM employees
-WHERE joining_date NOT BETWEEN '2020-01-01' AND '2023-12-31'
-  AND salary > 60000;
+SELECT * FROM employees WHERE joining_date NOT BETWEEN '2020-01-01' AND '2023-12-31' AND salary > 60000;
 
 
-SELECT * FROM employees
-WHERE city IN ('Indore', 'Pune', 'Bangalore')
-  AND salary BETWEEN 50000 AND 90000
-  AND experience >= 4;
+SELECT * FROM employees WHERE city IN ('Indore', 'Pune', 'Bangalore') AND salary BETWEEN 50000 AND 90000 AND experience >= 4;
 
 
-SELECT * FROM employees
-WHERE city NOT IN ('Bhopal', 'Mumbai')
-  AND department <> 'HR'
-  AND joining_date BETWEEN '2021-01-01' AND '2025-12-31';
+SELECT * FROM employees WHERE city NOT IN ('Bhopal', 'Mumbai') AND department <> 'HR' AND joining_date BETWEEN '2021-01-01' AND '2025-12-31';
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'Finance')
-  AND salary > 60000
-  AND age BETWEEN 25 AND 35
-  AND joining_date >= '2023-01-01';
+SELECT * FROM employees WHERE department IN ('IT', 'Finance') AND salary > 60000 AND age BETWEEN 25 AND 35 AND joining_date >= '2023-01-01';
 
 
-SELECT * FROM employees
-WHERE salary NOT BETWEEN 40000 AND 75000
-  AND experience BETWEEN 2 AND 8
-  AND department <> 'Sales';
+SELECT * FROM employees WHERE salary NOT BETWEEN 40000 AND 75000 AND experience BETWEEN 2 AND 8 AND department <> 'Sales';
   
 
-SELECT * FROM employees
-WHERE city IN ('Indore', 'Pune')
-  AND department IN ('IT', 'Finance', 'HR')
-  AND salary BETWEEN 45000 AND 85000
-  AND joining_date BETWEEN '2020-01-01' AND '2024-12-31';  
+SELECT * FROM employees WHERE city IN ('Indore', 'Pune') AND department IN ('IT', 'Finance', 'HR') AND salary BETWEEN 45000 AND 85000 AND joining_date BETWEEN '2020-01-01' AND '2024-12-31';  

@@ -74,6 +74,10 @@ SQL Queries
 20. Find products whose name starts with S or M, whose city is not Indore or Mumbai, whose price is between ₹15,000 and ₹80,000, whose rating is at least 4, and whose manufacturing date is after 2023.
 */
 
+CREATE database Product_Management_System;
+
+use Product_Management_System;
+
 CREATE TABLE products (
     product_id INT PRIMARY KEY,
     product_name VARCHAR(100),
@@ -125,105 +129,62 @@ VALUES
  SELECT * FROM products;
 
 
- SELECT * FROM products
-WHERE price > 30000
-  AND rating >= 4
-  AND city <> 'Mumbai';
+ SELECT * FROM products WHERE price > 30000 AND rating >= 4 AND city <> 'Mumbai';
 
 
-SELECT * FROM products
-WHERE (stock < 20 OR price > 75000)
-  AND category <> 'Grocery';
+SELECT * FROM products WHERE (stock < 20 OR price > 75000) AND category <> 'Grocery';
 
 
-SELECT * FROM products
-WHERE price BETWEEN 15000 AND 60000
-  AND rating BETWEEN 3 AND 5
-  AND manufacturing_date >= '2023-01-01';
+SELECT * FROM products WHERE price BETWEEN 15000 AND 60000 AND rating BETWEEN 3 AND 5 AND manufacturing_date >= '2023-01-01';
 
 
-SELECT * FROM products
-WHERE city IN ('Indore', 'Pune', 'Delhi')
-  AND price > 20000
-  AND stock <> 0;
+SELECT * FROM products WHERE city IN ('Indore', 'Pune', 'Delhi') AND price > 20000 AND stock <> 0;
 
 
-SELECT * FROM products
-WHERE category IN ('Electronics', 'Furniture');
+SELECT * FROM products WHERE category IN ('Electronics', 'Furniture');
 
 
-SELECT * FROM products
-WHERE category IN ('Electronics', 'Clothing', 'Grocery');
+SELECT * FROM products WHERE category IN ('Electronics', 'Clothing', 'Grocery');
 
 
-SELECT * FROM products
-WHERE city NOT IN ('Indore', 'Bhopal');
+SELECT * FROM products WHERE city NOT IN ('Indore', 'Bhopal');
 
 
-SELECT * FROM products
-WHERE brand NOT IN ('Samsung', 'LG', 'Sony');
+SELECT * FROM products WHERE brand NOT IN ('Samsung', 'LG', 'Sony');
 
 
-SELECT * FROM products
-WHERE price BETWEEN 10000 AND 50000;
+SELECT * FROM products WHERE price BETWEEN 10000 AND 50000;
 
 
-SELECT * FROM products
-WHERE stock BETWEEN 20 AND 60;
+SELECT * FROM products WHERE stock BETWEEN 20 AND 60;
 
 
-SELECT * FROM products
-WHERE rating BETWEEN 3 AND 5
-  AND price > 20000;
+SELECT * FROM products WHERE rating BETWEEN 3 AND 5 AND price > 20000;
 
 
-SELECT * FROM products
-WHERE manufacturing_date BETWEEN '2023-01-01' AND '2025-12-31'
-  AND category IN ('Electronics', 'Furniture');
+SELECT * FROM products WHERE manufacturing_date BETWEEN '2023-01-01' AND '2025-12-31' AND category IN ('Electronics', 'Furniture');
 
 
-SELECT * FROM products
-WHERE product_name LIKE 'S%';
+SELECT * FROM products WHERE product_name LIKE 'S%';
 
 
-SELECT * FROM products
-WHERE product_name LIKE '%phone%';
+SELECT * FROM products WHERE product_name LIKE '%phone%';
 
 
-SELECT * FROM products
-WHERE brand LIKE '%a';
+SELECT * FROM products WHERE brand LIKE '%a';
 
 
-SELECT * FROM products
-WHERE city IN ('Indore', 'Pune')
-  AND price BETWEEN 20000 AND 70000
-  AND rating >= 4;
+SELECT * FROM products WHERE city IN ('Indore', 'Pune') AND price BETWEEN 20000 AND 70000 AND rating >= 4;
 
 
-SELECT * FROM products
-WHERE category IN ('Electronics', 'Furniture')
-  AND stock > 10
-  AND price < 60000
-  AND manufacturing_date >= '2023-01-01';
+SELECT * FROM products  WHERE category IN ('Electronics', 'Furniture') AND stock > 10 AND price < 60000 AND manufacturing_date >= '2023-01-01';
 
 
-SELECT * FROM products
-WHERE product_name LIKE '%a%'
-  AND price NOT BETWEEN 10000 AND 50000
-  AND stock > 5;
+SELECT * FROM products WHERE product_name LIKE '%a%' AND price NOT BETWEEN 10000 AND 50000 AND stock > 5;
 
 
-SELECT * FROM products
-WHERE manufacturing_date BETWEEN '2022-01-01' AND '2025-12-31'
-  AND category IN ('Electronics', 'Clothing', 'Furniture')
-  AND rating > 3
-  AND city <> 'Mumbai';
+SELECT * FROM products WHERE manufacturing_date BETWEEN '2022-01-01' AND '2025-12-31' AND category IN ('Electronics', 'Clothing', 'Furniture') AND rating > 3 AND city <> 'Mumbai';
 
 
-SELECT * FROM products
-WHERE (product_name LIKE 'S%' OR product_name LIKE 'M%')
-  AND city NOT IN ('Indore', 'Mumbai')
-  AND price BETWEEN 15000 AND 80000
-  AND rating >= 4
-  AND manufacturing_date >= '2024-01-01';
+SELECT * FROM products WHERE (product_name LIKE 'S%' OR product_name LIKE 'M%') AND city NOT IN ('Indore', 'Mumbai') AND price BETWEEN 15000 AND 80000 AND rating >= 4 AND manufacturing_date >= '2024-01-01';
 

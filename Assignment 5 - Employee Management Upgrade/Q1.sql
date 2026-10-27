@@ -87,6 +87,9 @@ Find employees whose name starts with S OR contains a, department is IT or Finan
 
 */
 
+CREATE database Employee_Management_System3;
+
+use Employee_Management_System3;
 
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
@@ -189,170 +192,74 @@ VALUES
  SELECT * FROM employees;
 
 
- SELECT COUNT(*) AS total_employees
-FROM employees;
+ SELECT COUNT(*) AS total_employees FROM employees;
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'Finance', 'HR')
-  AND joining_date > '2023-01-01'
-  AND salary BETWEEN 40000 AND 90000
-  AND experience > 3;
+SELECT * FROM employees WHERE department IN ('IT', 'Finance', 'HR') AND joining_date > '2023-01-01' AND salary BETWEEN 40000 AND 90000 AND experience > 3;
 
 
-SELECT * FROM employees
-WHERE email IS NULL
-  AND salary > 50000
-  AND joining_date > '2022-01-01';
+SELECT * FROM employees WHERE email IS NULL AND salary > 50000 AND joining_date > '2022-01-01';
 
 
-SELECT * FROM employees
-WHERE manager_id IS NOT NULL
-  AND department <> 'HR'
-  AND (salary < 40000 OR salary > 80000);
+SELECT * FROM employees WHERE manager_id IS NOT NULL AND department <> 'HR' AND (salary < 40000 OR salary > 80000);
 
 
-SELECT * FROM employees
-WHERE city IN ('Indore', 'Pune', 'Delhi')
-  AND joining_date BETWEEN '2022-01-01' AND '2025-12-31'
-  AND salary > 45000
-  AND experience >= 3;
+SELECT * FROM employees WHERE city IN ('Indore', 'Pune', 'Delhi') AND joining_date BETWEEN '2022-01-01' AND '2025-12-31' AND salary > 45000 AND experience >= 3;
 
 
-SELECT * FROM employees
-WHERE employment_type = 'FULL_TIME'
-  AND (
-      FIND_IN_SET('JAVA', skills) > 0
-      OR FIND_IN_SET('PYTHON', skills) > 0
-  )
-  AND salary > 50000
-  AND email IS NOT NULL;
+SELECT * FROM employees WHERE employment_type = 'FULL_TIME' AND (FIND_IN_SET('JAVA', skills) > 0 OR FIND_IN_SET('PYTHON', skills) > 0) AND salary > 50000 AND email IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE (employee_name LIKE 'A%' OR employee_name LIKE 'S%')
-  AND joining_date > '2023-01-01'
-  AND salary BETWEEN 30000 AND 80000
-  AND age BETWEEN 25 AND 35;
+SELECT * FROM employees WHERE (employee_name LIKE 'A%' OR employee_name LIKE 'S%') AND joining_date > '2023-01-01' AND salary BETWEEN 30000 AND 80000 AND age BETWEEN 25 AND 35;
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'Finance')
-  AND FIND_IN_SET('JAVA', skills) > 0
-  AND experience > 4
-  AND salary NOT BETWEEN 50000 AND 80000;
+SELECT * FROM employees WHERE department IN ('IT', 'Finance') AND FIND_IN_SET('JAVA', skills) > 0 AND experience > 4 AND salary NOT BETWEEN 50000 AND 80000;
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'HR', 'Marketing')
-  AND city <> 'Mumbai'
-  AND salary > 40000
-  AND (email IS NULL OR manager_id IS NULL);
+SELECT * FROM employees WHERE department IN ('IT', 'HR', 'Marketing') AND city <> 'Mumbai' AND salary > 40000 AND (email IS NULL OR manager_id IS NULL);
 
 
-SELECT * FROM employees
-WHERE joining_date > '2022-01-01'
-  AND employment_type <> 'INTERN'
-  AND salary > 45000
-  AND (
-      FIND_IN_SET('SQL', skills) > 0
-      OR FIND_IN_SET('PYTHON', skills) > 0
-  );
+SELECT * FROM employees WHERE joining_date > '2022-01-01' AND employment_type <> 'INTERN' AND salary > 45000 AND (FIND_IN_SET('SQL', skills) > 0 OR FIND_IN_SET('PYTHON', skills) > 0);
 
 
-SELECT * FROM employees
-WHERE (salary > 60000 OR experience > 7)
-  AND city NOT IN ('Mumbai', 'Bhopal');
+SELECT * FROM employees WHERE (salary > 60000 OR experience > 7) AND city NOT IN ('Mumbai', 'Bhopal');
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'Development')
-  AND salary > 50000
-  AND email IS NOT NULL;
+SELECT * FROM employees WHERE department IN ('IT', 'Development') AND salary > 50000 AND email IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE employee_name LIKE '%a%'
-  AND department <> 'HR'
-  AND salary BETWEEN 35000 AND 75000
-  AND joining_date > '2022-06-01';
+SELECT * FROM employees WHERE employee_name LIKE '%a%' AND department <> 'HR' AND salary BETWEEN 35000 AND 75000 AND joining_date > '2022-06-01';
 
 
-SELECT * FROM employees
-WHERE FIND_IN_SET('JAVA', skills) > 0
-  AND FIND_IN_SET('SQL', skills) > 0
-  AND salary > 55000
-  AND experience > 3
-  AND manager_id IS NOT NULL;
+SELECT * FROM employees WHERE FIND_IN_SET('JAVA', skills) > 0 AND FIND_IN_SET('SQL', skills) > 0 AND salary > 55000 AND experience > 3 AND manager_id IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE (
-      FIND_IN_SET('PYTHON', skills) > 0
-      OR FIND_IN_SET('REACT', skills) > 0
-  )
-  AND department IN ('IT', 'Development')
-  AND joining_date > '2023-01-01'
-  AND salary > 50000;
+SELECT * FROM employees WHERE (FIND_IN_SET('PYTHON', skills) > 0 OR FIND_IN_SET('REACT', skills) > 0) AND department IN ('IT', 'Development') AND joining_date > '2023-01-01' AND salary > 50000;
 
 
-SELECT * FROM employees
-WHERE employment_type IN ('CONTRACT', 'PART_TIME')
-  AND salary > 35000
-  AND joining_date BETWEEN '2022-01-01' AND '2025-12-31'
-  AND email IS NOT NULL;
+SELECT * FROM employees WHERE employment_type IN ('CONTRACT', 'PART_TIME') AND salary > 35000 AND joining_date BETWEEN '2022-01-01' AND '2025-12-31' AND email IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE gender = 'FEMALE'
-  AND department IN ('IT', 'Finance')
-  AND salary > 45000
-  AND experience > 2;
+SELECT * FROM employees WHERE gender = 'FEMALE' AND department IN ('IT', 'Finance') AND salary > 45000 AND experience > 2;
 
 
-SELECT * FROM employees
-WHERE city IN ('Indore', 'Pune', 'Delhi')
-  AND department <> 'HR'
-  AND joining_date > '2023-01-01'
-  AND salary BETWEEN 40000 AND 100000
-  AND manager_id IS NOT NULL;
+SELECT * FROM employees WHERE city IN ('Indore', 'Pune', 'Delhi') AND department <> 'HR' AND joining_date > '2023-01-01' AND salary BETWEEN 40000 AND 100000 AND manager_id IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE salary NOT BETWEEN 30000 AND 60000
-  AND experience > 5
-  AND department IN ('IT', 'Finance');
+SELECT * FROM employees WHERE salary NOT BETWEEN 30000 AND 60000 AND experience > 5 AND department IN ('IT', 'Finance');
 
 
-SELECT * FROM employees
-WHERE (email IS NULL OR manager_id IS NULL)
-  AND salary > 40000
-  AND joining_date > '2022-01-01';
+SELECT * FROM employees WHERE (email IS NULL OR manager_id IS NULL) AND salary > 40000 AND joining_date > '2022-01-01';
 
 
-SELECT * FROM employees
-WHERE (
-      employee_name LIKE 'S%'
-      OR employee_name LIKE '%a%'
-  )
-  AND department IN ('IT', 'Finance')
-  AND salary BETWEEN 40000 AND 90000
-  AND experience >= 3;
+SELECT * FROM employees WHERE (employee_name LIKE 'S%' OR employee_name LIKE '%a%') AND department IN ('IT', 'Finance') AND salary BETWEEN 40000 AND 90000 AND experience >= 3;
 
 
-SELECT * FROM employees
-WHERE joining_date BETWEEN '2022-01-01' AND '2025-12-31'
-  AND city NOT IN ('Mumbai', 'Bhopal')
-  AND salary > 50000
-  AND FIND_IN_SET('JAVA', skills) > 0;
+SELECT * FROM employees WHERE joining_date BETWEEN '2022-01-01' AND '2025-12-31' AND city NOT IN ('Mumbai', 'Bhopal') AND salary > 50000 AND FIND_IN_SET('JAVA', skills) > 0;
 
 
-SELECT * FROM employees
-WHERE employment_type = 'FULL_TIME'
-  AND joining_date > '2023-01-01'
-  AND salary > 60000
-  AND (
-      (
+SELECT * FROM employees WHERE employment_type = 'FULL_TIME' AND joining_date > '2023-01-01' AND salary > 60000 AND (
+     (
           FIND_IN_SET('JAVA', skills) > 0
           AND FIND_IN_SET('SQL', skills) > 0
       )
@@ -364,27 +271,13 @@ WHERE employment_type = 'FULL_TIME'
   );
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'Finance', 'Development')
-  AND salary BETWEEN 45000 AND 90000
-  AND experience > 3
-  AND email IS NOT NULL
-  AND manager_id IS NOT NULL;
+SELECT * FROM employees WHERE department IN ('IT', 'Finance', 'Development') AND salary BETWEEN 45000 AND 90000 AND experience > 3 AND email IS NOT NULL AND manager_id IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE joining_date > '2023-01-01'
-  AND department <> 'HR'
-  AND (salary > 50000 OR experience > 6)
-  AND city <> 'Mumbai';
+SELECT * FROM employees WHERE joining_date > '2023-01-01' AND department <> 'HR' AND (salary > 50000 OR experience > 6) AND city <> 'Mumbai';
 
 
-SELECT * FROM employees
-WHERE (employee_name LIKE 'A%' OR employee_name LIKE 'M%')
-  AND gender = 'FEMALE'
-  AND employment_type = 'FULL_TIME'
-  AND salary > 45000
-  AND email IS NOT NULL;
+SELECT * FROM employees WHERE (employee_name LIKE 'A%' OR employee_name LIKE 'M%') AND gender = 'FEMALE' AND employment_type = 'FULL_TIME' AND salary > 45000 AND email IS NOT NULL;
 
 
 SELECT * FROM employees
@@ -397,18 +290,11 @@ WHERE (
   AND manager_id IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE city IN ('Indore', 'Pune', 'Delhi')
-  AND joining_date BETWEEN '2023-01-01' AND '2026-12-31'
-  AND salary BETWEEN 40000 AND 100000
-  AND experience > 2
-  AND (email IS NULL OR manager_id IS NULL);
+SELECT * FROM employees WHERE city IN ('Indore', 'Pune', 'Delhi') AND joining_date BETWEEN '2023-01-01' AND '2026-12-31' AND salary BETWEEN 40000 AND 100000 AND experience > 2 AND (email IS NULL OR manager_id IS NULL);
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'Development')
-  AND employee_name LIKE '%a%'
-  AND (
+SELECT * FROM employees WHERE department IN ('IT', 'Development') AND employee_name LIKE '%a%'
+AND (
       FIND_IN_SET('JAVA', skills) > 0
       OR FIND_IN_SET('PYTHON', skills) > 0
   )
@@ -417,14 +303,7 @@ WHERE department IN ('IT', 'Development')
   AND email IS NOT NULL;
 
 
-SELECT * FROM employees
-WHERE department IN ('IT', 'Finance', 'Development')
-  AND city NOT IN ('Mumbai', 'Bhopal')
-  AND salary BETWEEN 40000 AND 90000
-  AND experience > 3
-  AND FIND_IN_SET('SQL', skills) > 0
-  AND manager_id IS NOT NULL
-ORDER BY salary DESC;
+SELECT * FROM employees WHERE department IN ('IT', 'Finance', 'Development') AND city NOT IN ('Mumbai', 'Bhopal') AND salary BETWEEN 40000 AND 90000 AND experience > 3 AND FIND_IN_SET('SQL', skills) > 0 AND manager_id IS NOT NULL ORDER BY salary DESC;
 
 
 SELECT * FROM employees

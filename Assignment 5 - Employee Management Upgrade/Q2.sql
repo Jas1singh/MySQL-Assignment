@@ -155,6 +155,9 @@ Additionally, update the status based on the applicable increment:
 Below 10% → Under Review
 
 */
+CREATE database Staff_Management_System;
+
+use Staff_Management_System;
 
 CREATE TABLE staff_update (
     staff_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -195,88 +198,46 @@ VALUES
  SELECT * FROM staff_update;
 
 
- SELECT staff_id
-FROM staff_update
-WHERE staff_name = 'Aarav';
+SELECT staff_id FROM staff_update WHERE staff_name = 'Aarav';
 
-UPDATE staff_update
-SET salary = 52000
-WHERE staff_id = 1;
+UPDATE staff_update SET salary = 52000 WHERE staff_id = 1;
 
 
 
-UPDATE staff_update
-SET department = 'Finance',
-    city = 'Indore'
-WHERE staff_name = 'Bhavna';
+UPDATE staff_update SET department = 'Finance',city = 'Indore' WHERE staff_name = 'Bhavna';
 
 
-UPDATE staff_update
-SET salary = salary + 4000
-WHERE salary < 60000
-  AND experience >= 3
-  AND department <> 'Sales';
+UPDATE staff_update SET salary = salary + 4000 WHERE salary < 60000 AND experience >= 3 AND department <> 'Sales';
 
 
-UPDATE staff_update
-SET salary = salary + 3000
-WHERE (department = 'IT' AND experience >= 3)
-   OR (department = 'HR' AND experience >= 5);
+UPDATE staff_update SET salary = salary + 3000 WHERE (department = 'IT' AND experience >= 3) OR (department = 'HR' AND experience >= 5);
 
 
-UPDATE staff_update
-SET salary = salary * 1.10
-WHERE department IN ('IT', 'Finance')
-  AND salary < 70000;
+UPDATE staff_update SET salary = salary * 1.10 WHERE department IN ('IT', 'Finance') AND salary < 70000;
 
 
-UPDATE staff_update
-SET salary = salary + 2500
-WHERE department NOT IN ('HR', 'Sales')
-  AND experience BETWEEN 5 AND 8;
+UPDATE staff_update SET salary = salary + 2500 WHERE department NOT IN ('HR', 'Sales') AND experience BETWEEN 5 AND 8;
 
 
-UPDATE staff_update
-SET salary = salary + 5000
-WHERE salary BETWEEN 50000 AND 70000
-  AND department <> 'Finance';
+UPDATE staff_update SET salary = salary + 5000 WHERE salary BETWEEN 50000 AND 70000 AND department <> 'Finance';
 
 
-UPDATE staff_update
-SET salary = salary * 1.07
-WHERE staff_name LIKE 'A%'
-   OR staff_name LIKE 'D%';
+UPDATE staff_update SET salary = salary * 1.07 WHERE staff_name LIKE 'A%' OR staff_name LIKE 'D%';
 
 
-UPDATE staff_update
-SET city = 'Mumbai'
-WHERE staff_name = 'Farah'
-  AND city IS NULL;
+UPDATE staff_update SET city = 'Mumbai' WHERE staff_name = 'Farah' AND city IS NULL;
 
 
-UPDATE staff_update
-SET salary = salary * 1.10
-WHERE joining_date < '2020-01-01'
-  AND salary < 70000;
+UPDATE staff_update SET salary = salary * 1.10 WHERE joining_date < '2020-01-01' AND salary < 70000;
 
 
-UPDATE staff_update
-SET salary = salary * 1.08,
-    experience = experience + 1,
-    status = 'Promoted'
-WHERE department = 'IT'
-  AND experience >= 5;
+UPDATE staff_update SET salary = salary * 1.08, experience = experience + 1, status = 'Promoted' WHERE department = 'IT' AND experience >= 5;
 
 
-UPDATE staff_update
-SET salary = salary + 6000
-WHERE experience >= 5
-  AND salary < 75000
-  AND department IN ('HR', 'Finance');
+UPDATE staff_update SET salary = salary + 6000 WHERE experience >= 5 AND salary < 75000 AND department IN ('HR', 'Finance');
 
 
-UPDATE staff_update
-SET salary = salary *
+UPDATE staff_update SET salary = salary *
     CASE department
         WHEN 'IT' THEN 1.12
         WHEN 'HR' THEN 1.09
@@ -286,8 +247,7 @@ SET salary = salary *
     END;
 
 
-UPDATE staff_update
-SET salary = salary *
+UPDATE staff_update SET salary = salary *
     CASE
         WHEN experience >= 8 THEN 1.15
         WHEN experience BETWEEN 5 AND 7 THEN 1.10
@@ -296,27 +256,19 @@ SET salary = salary *
     END;
 
 
-UPDATE staff_update
-SET salary = salary *
+UPDATE staff_update SET salary = salary *
     CASE
-        WHEN department = 'IT' AND experience >= 8
-            THEN 1.18
-        WHEN department = 'IT'
-            THEN 1.10
-        WHEN department = 'HR' AND experience >= 6
-            THEN 1.12
-        WHEN department = 'HR'
-            THEN 1.07
-        WHEN department = 'Finance'
-            THEN 1.08
-        WHEN department = 'Sales'
-            THEN 1.05
+        WHEN department = 'IT' AND experience >= 8 THEN 1.18
+        WHEN department = 'IT' THEN 1.10
+        WHEN department = 'HR' AND experience >= 6 THEN 1.12
+        WHEN department = 'HR' THEN 1.07
+        WHEN department = 'Finance' THEN 1.08
+        WHEN department = 'Sales' THEN 1.05
         ELSE 1.00
     END;
 
 
-UPDATE staff_update
-SET status =
+UPDATE staff_update SET status =
     CASE
         WHEN salary >= 75000 THEN 'Senior'
         WHEN salary >= 60000 THEN 'Experienced'
@@ -325,9 +277,7 @@ SET status =
     END;
 
 
-SELECT *
-FROM staff_update
-ORDER BY
+SELECT * FROM staff_update ORDER BY
     CASE department
         WHEN 'Finance' THEN 1
         WHEN 'IT' THEN 2
@@ -337,9 +287,7 @@ ORDER BY
     END;
 
 
-SELECT *
-FROM staff_update
-ORDER BY
+SELECT * FROM staff_update ORDER BY
     CASE department
         WHEN 'IT' THEN 1
         WHEN 'HR' THEN 2
@@ -350,9 +298,7 @@ ORDER BY
     salary DESC;
 
 
-SELECT *
-FROM staff_update
-ORDER BY
+SELECT * FROM staff_update ORDER BY
     CASE
         WHEN experience >= 8 THEN 1
         WHEN experience BETWEEN 5 AND 7 THEN 2
@@ -361,16 +307,7 @@ ORDER BY
     END;
 
 
-UPDATE staff_update
-SET salary = salary + 5000
-WHERE staff_id = (
-    SELECT staff_id
-    FROM (
-        SELECT staff_id
-        FROM staff_update
-        WHERE department IN ('IT', 'HR')
-          AND experience >= 3
-          AND salary < 70000
+UPDATE staff_update SET salary = salary + 5000 WHERE staff_id = (SELECT staff_id FROM (SELECT staff_id FROM staff_update WHERE department IN ('IT', 'HR') AND experience >= 3 AND salary < 70000
         ORDER BY salary ASC, staff_id ASC
         LIMIT 1
     ) AS eligible
@@ -424,38 +361,24 @@ WHERE staff_id = (
 UPDATE staff_update
 SET salary = salary * 1.12
 WHERE status = 'Active'
-  AND salary < 80000
-  AND (
-      (department = 'IT' AND experience >= 5)
-      OR
-      (department = 'Finance' AND salary < 65000)
-  );
+AND salary < 80000 AND ((department = 'IT' AND experience >= 5) OR (department = 'Finance' AND salary < 65000));
 
 
 UPDATE staff_update
 SET salary = salary *
     CASE
-        WHEN department = 'IT' AND experience >= 8
-            THEN 1.18
-        WHEN department = 'IT' AND experience BETWEEN 5 AND 7
-            THEN 1.12
-        WHEN department = 'HR' AND experience >= 6
-            THEN 1.10
-        WHEN department = 'HR' AND experience < 6
-            THEN 1.07
-        WHEN department = 'Finance' AND salary < 65000
-            THEN 1.10
-        WHEN department = 'Finance' AND salary >= 65000
-            THEN 1.07
-        WHEN department = 'Sales' AND experience >= 4
-            THEN 1.06
+        WHEN department = 'IT' AND experience >= 8 THEN 1.18
+        WHEN department = 'IT' AND experience BETWEEN 5 AND 7 THEN 1.12
+        WHEN department = 'HR' AND experience >= 6 THEN 1.10
+        WHEN department = 'HR' AND experience < 6 THEN 1.07
+        WHEN department = 'Finance' AND salary < 65000 THEN 1.10
+        WHEN department = 'Finance' AND salary >= 65000 THEN 1.07
+        WHEN department = 'Sales' AND experience >= 4 THEN 1.06
         ELSE 1.03
     END;
 
 
-UPDATE staff_update
-SET
-    salary = salary *
+UPDATE staff_update SET salary = salary *
         CASE
             WHEN experience >= 8 THEN 1.15
             WHEN experience BETWEEN 5 AND 7 THEN 1.10
@@ -471,26 +394,13 @@ SET
         END;
 
 
-UPDATE staff_update
-SET status = 'Promoted'
-WHERE experience >= 6
-  AND salary >= 60000
-  AND status = 'Active'
-  AND department IN ('IT', 'HR', 'Finance');
+UPDATE staff_update SET status = 'Promoted' WHERE experience >= 6 AND salary >= 60000 AND status = 'Active' AND department IN ('IT', 'HR', 'Finance');
 
 
-
-UPDATE staff_update
-SET salary = salary * 1.10,
-    city = 'Bangalore',
-    status = 'Transferred'
-WHERE department = 'IT'
-  AND experience >= 5
-  AND city IN ('Pune', 'Delhi');
+UPDATE staff_update SET salary = salary * 1.10, city = 'Bangalore', status = 'Transferred' WHERE department = 'IT' AND experience >= 5 AND city IN ('Pune', 'Delhi');
 
 
-UPDATE staff_update
-SET salary = salary + 7000
+UPDATE staff_update SET salary = salary + 7000
 WHERE staff_id = (
     SELECT staff_id
     FROM (
@@ -507,66 +417,27 @@ WHERE staff_id = (
 
 
 
-UPDATE staff_update
-SET
-    salary = salary *
-        CASE
-            WHEN department = 'IT'
-                 AND experience >= 8
-                 AND salary >= 70000
-                THEN 1.18
+UPDATE staff_update SET salary = salary *
+    CASE
+        WHEN department = 'IT' AND experience >= 8 AND salary >= 70000 THEN 1.18
+        WHEN department = 'IT' AND experience >= 5 THEN 1.12
+        WHEN department = 'HR' AND experience >= 6 THEN 1.10
+        WHEN department = 'HR' AND experience < 6 THEN 1.07
+        WHEN department = 'Finance' AND salary < 65000 THEN 1.10
+        WHEN department = 'Finance' AND salary >= 65000 THEN 1.07
+        WHEN department = 'Sales' AND experience >= 4 THEN 1.06
+        ELSE 1.03
+    END,
 
-            WHEN department = 'IT'
-                 AND experience >= 5
-                THEN 1.12
-
-            WHEN department = 'HR'
-                 AND experience >= 6
-                THEN 1.10
-
-            WHEN department = 'HR'
-                 AND experience < 6
-                THEN 1.07
-
-            WHEN department = 'Finance'
-                 AND salary < 65000
-                THEN 1.10
-
-            WHEN department = 'Finance'
-                 AND salary >= 65000
-                THEN 1.07
-
-            WHEN department = 'Sales'
-                 AND experience >= 4
-                THEN 1.06
-
-            ELSE 1.03
-        END,
-
-    status =
-        CASE
-            WHEN status = 'Inactive'
-                THEN status
-
-            WHEN department = 'IT'
-                 AND experience >= 8
-                 AND salary >= 70000
-                THEN 'Promoted'
-
-            WHEN department = 'IT'
-                 AND experience >= 5
-                THEN 'Eligible'
-
-            WHEN department = 'HR'
-                 AND experience >= 6
-                THEN 'Eligible'
-
-            WHEN department = 'Finance'
-                 AND salary < 65000
-                THEN 'Eligible'
-
-            ELSE 'Under Review'
-        END
+status =
+    CASE
+        WHEN status = 'Inactive' THEN status
+        WHEN department = 'IT' AND experience >= 8 AND salary >= 70000 THEN 'Promoted'
+        WHEN department = 'IT' AND experience >= 5 THEN 'Eligible'
+        WHEN department = 'HR' AND experience >= 6 THEN 'Eligible'
+        WHEN department = 'Finance' AND salary < 65000 THEN 'Eligible'
+        ELSE 'Under Review'
+    END
 
 WHERE status <> 'Inactive';
 
@@ -574,14 +445,10 @@ WHERE status <> 'Inactive';
 
 # Verify the updated records
 
-SELECT *
-FROM staff_update
-ORDER BY staff_id;
+SELECT * FROM staff_update ORDER BY staff_id;
 
 
-SELECT staff_id, staff_name, department, salary, experience, status
-FROM staff_update
-ORDER BY staff_id;
+SELECT staff_id, staff_name, department, salary, experience, status FROM staff_update ORDER BY staff_id;
 
 
 
