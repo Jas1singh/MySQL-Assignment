@@ -1,4 +1,4 @@
-# Assignment 6 - Empployee Payroll And Job Management System 
+# Assignment 7 - Empployee Payroll And Job Management System 
 
 /* 
 A company wants to maintain employee information in MySQL. You have been asked to design an `employee` table that strictly enforces the company's data rules using `NOT NULL`, `UNIQUE`, and `CHECK` constraints.
@@ -212,6 +212,7 @@ Test the following cases:
 
 
 CREATE DATABASE employee_payroll;
+
 USE employee_payroll;
 
 CREATE TABLE employee (
@@ -230,7 +231,6 @@ CREATE TABLE employee (
     status VARCHAR(20) NOT NULL,
     bonus DECIMAL(10,2) NOT NULL,
 
-    -- Individual CHECK constraints
     CONSTRAINT chk_age
         CHECK (age BETWEEN 21 AND 60),
 
