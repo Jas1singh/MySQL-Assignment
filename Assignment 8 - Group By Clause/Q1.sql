@@ -65,56 +65,32 @@ VALUES
 
 SELECT * FROM employees;
 
-SELECT department, COUNT(*) AS total_employees
-FROM employees
-GROUP BY department;
+SELECT department, COUNT(*) AS total_employees FROM employees GROUP BY department;
 
 
-SELECT job_role, AVG(salary) AS average_salary
-FROM employees
-GROUP BY job_role;
+SELECT job_role, AVG(salary) AS average_salary FROM employees GROUP BY job_role;
 
 
 
-SELECT MAX(salary) AS highest_salary
-FROM employees
-WHERE department = 'IT';
+SELECT MAX(salary) AS highest_salary FROM employees WHERE department = 'IT';
 
 
-SELECT MIN(salary) AS lowest_salary
-FROM employees;
+SELECT MIN(salary) AS lowest_salary FROM employees;
 
 
-SELECT COUNT(*) AS total_employees
-FROM employees
-WHERE hire_date > '2023-01-01';
+SELECT COUNT(*) AS total_employees FROM employees WHERE hire_date > '2023-01-01';
 
 
-SELECT department, SUM(salary) AS total_salary
-FROM employees
-GROUP BY department;
+SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY department;
 
 
-SELECT job_role, SUM(salary) AS total_salary
-FROM employees
-GROUP BY job_role
-ORDER BY total_salary DESC
-LIMIT 1;
+SELECT job_role, SUM(salary) AS total_salary FROM employees GROUP BY job_role ORDER BY total_salary DESC LIMIT 1;
 
 
-SELECT AVG(salary) AS average_salary
-FROM employees
-WHERE hire_date >= '2023-01-01';
+SELECT AVG(salary) AS average_salary FROM employees WHERE hire_date >= '2023-01-01';
 
 
-SELECT department, SUM(salary) AS total_salary
-FROM employees
-GROUP BY department
-HAVING SUM(salary) > 10000;
+SELECT department, SUM(salary) AS total_salary FROM employees GROUP BY department HAVING SUM(salary) > 10000;
 
 
-SELECT department, COUNT(*) AS total_employees
-FROM employees
-GROUP BY department
-ORDER BY total_employees DESC
-LIMIT 1;
+SELECT department, COUNT(*) AS total_employees FROM employees GROUP BY department ORDER BY total_employees DESC LIMIT 1;
