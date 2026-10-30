@@ -68,4 +68,4 @@ VALUES
 DESC employee;
 
 
-SELECT * FROM company_db.employee;
+SELECT * FROM employee;

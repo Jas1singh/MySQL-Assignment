@@ -210,6 +210,9 @@ SELECT * FROM employees WHERE city IN ('Indore', 'Pune', 'Delhi') AND joining_da
 SELECT * FROM employees WHERE employment_type = 'FULL_TIME' AND (FIND_IN_SET('JAVA', skills) > 0 OR FIND_IN_SET('PYTHON', skills) > 0) AND salary > 50000 AND email IS NOT NULL;
 
 
+SELECT * FROM employees WHERE employment_type = 'FULL_TIME' AND skills in ('java','python') AND salary > 50000 AND email IS NOT NULL;
+
+
 SELECT * FROM employees WHERE (employee_name LIKE 'A%' OR employee_name LIKE 'S%') AND joining_date > '2023-01-01' AND salary BETWEEN 30000 AND 80000 AND age BETWEEN 25 AND 35;
 
 

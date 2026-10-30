@@ -67,4 +67,4 @@ VALUES
 DESC student;
 
 
-SELECT * FROM school_db.student;
+SELECT * FROM student;

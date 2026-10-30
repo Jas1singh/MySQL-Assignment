@@ -90,19 +90,10 @@ CREATE TABLE books (
     book_id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     book_title VARCHAR(150) NOT NULL,
     author_name VARCHAR(100) NOT NULL,
-    isbn CHAR(13) UNIQUE NOT NULL,
+    ISBN CHAR(13) UNIQUE NOT NULL,
     price DECIMAL(10,2) UNSIGNED NOT NULL,
     available_copies SMALLINT UNSIGNED DEFAULT 0,
-    book_category ENUM(
-        'FICTION',
-        'SCIENCE',
-        'TECHNOLOGY',
-        'HISTORY',
-        'MATHEMATICS',
-        'LITERATURE',
-        'COMPUTER',
-        'BIOGRAPHY'
-    ) NOT NULL,
+    book_category ENUM('FICTION','SCIENCE','TECHNOLOGY','HISTORY','MATHEMATICS','LITERATURE','COMPUTER','BIOGRAPHY') NOT NULL,
     publication_date DATE,
     is_available BOOLEAN DEFAULT TRUE,
     book_description TEXT,
@@ -307,4 +298,4 @@ SELECT COUNT(*) AS total_transactions FROM book_transactions;
 
 
 
-
+ 

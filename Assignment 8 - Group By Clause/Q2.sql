@@ -73,7 +73,6 @@ SELECT name, marks FROM students WHERE subject = 'Science' ORDER BY marks ASC LI
 
 SELECT class, COUNT(*) AS total_students FROM students WHERE marks > 85 GROUP BY class;
 
-
 SELECT subject, AVG(marks) AS average_marks FROM students GROUP BY subject HAVING AVG(marks) > 80;
 
 

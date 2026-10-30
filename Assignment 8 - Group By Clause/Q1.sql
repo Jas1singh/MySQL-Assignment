@@ -34,9 +34,9 @@ Find departments where the total salary exceeds 10,000.
 Find the department with the highest number of employees.
 
 */
-CREATE DATABASE Group_By;
+CREATE DATABASE Group_By_Clause;
 
-use Group_By;
+USE Group_By_Clause;
 
 
 CREATE TABLE employees (
@@ -71,11 +71,10 @@ SELECT department, COUNT(*) AS total_employees FROM employees GROUP BY departmen
 SELECT job_role, AVG(salary) AS average_salary FROM employees GROUP BY job_role;
 
 
-
 SELECT MAX(salary) AS highest_salary FROM employees WHERE department = 'IT';
 
 
-SELECT MIN(salary) AS lowest_salary FROM employees;
+SELECT name, MIN(salary) AS lowest_salary FROM employees;
 
 
 SELECT COUNT(*) AS total_employees FROM employees WHERE hire_date > '2023-01-01';

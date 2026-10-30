@@ -61,7 +61,7 @@ CREATE TABLE movie_reviews (
     rating DECIMAL(2,1),
     review_text TEXT
 );
-
+ 
 INSERT INTO movie_reviews
 (review_id, movie_title, reviewer_name, rating, review_text)
 VALUES

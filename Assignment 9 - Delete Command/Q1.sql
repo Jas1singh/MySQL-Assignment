@@ -1,0 +1,160 @@
+# Assignment 9 - Delete Command 
+
+/*
+ Question 1: 
+DELETE COMMAND ASSIGNMENT
+Table Name: staff_delete
+Column Data Type
+staff_id INT PRIMARY KEY AUTO_INCREMENT
+staff_name VARCHAR(50)
+department VARCHAR(30)
+city VARCHAR(30)
+salary DECIMAL(10,2)
+experience INT
+age INT
+joining_date DATE
+status VARCHAR(20)
+DATA
+('Aarav', 'IT', 'Indore', 48000, 3, 26, '2022-04-15', 'Active'),
+('Bhavna', 'HR', 'Bhopal', 56000, 5, 31, '2020-08-20', 'Active'),
+('Chetan', 'Finance', 'Delhi', 62000, 7, 35, '2018-03-10', 'Active'),
+('Divya', 'IT', 'Pune', 78000, 9, 38, '2016-11-05', 'Active'),
+('Eshan', 'Sales', 'Indore', 51000, 4, 29, '2021-06-18', 'Inactive'),
+('Farah', 'HR', NULL, 68000, 6, 34, '2019-01-25', 'Active'),
+('Gaurav', 'Finance', 'Mumbai', 74000, 8, 40, '2017-09-12', 'Active'),
+('Heena', 'IT', 'Delhi', 59000, 5, 30, '2020-02-17', 'Inactive'),
+('Ishaan', 'Sales', 'Pune', 45000, 2, 25, '2023-01-10', 'Active'),
+('Jaya', 'HR', 'Indore', 72000, 7, 36, '2018-07-22', 'Active');
+
+
+Q1. Delete the employee whose name is Aarav using his staff_id.
+
+Q2. Delete all employees who belong to the Sales department.
+
+Q3. Delete all employees whose salary is below ₹50,000.
+
+Q4. Delete all employees who belong to HR and have at least 5 years of experience.
+
+Q5. Delete all employees who are from Indore or Bhopal.
+
+Q6. Delete all employees who belong to neither IT nor Finance.
+
+Q7. Delete all employees whose salary is between ₹50,000 and ₹65,000, inclusive.
+
+Q8. Delete all employees who have less than 5 years of experience and whose status is Inactive.
+
+Q9. Delete all employees whose names start with the letter D.
+
+Q10. Delete all employees whose city is NULL.
+
+Q11. Delete all employees who joined before January 1, 2020 and have a salary of at least ₹60,000.
+
+Q12. Delete all employees who belong to IT or HR, have at least 3 years of experience, and earn less than ₹70,000.
+
+Q13. Delete all employees who are not from Sales, have salary above ₹55,000, and are currently Active.
+
+Q14. Delete all employees who belong to Finance or HR and have a salary below ₹65,000.
+
+Q15. Delete the employee with the lowest salary from the table. If multiple employees have the same lowest salary, delete only one employee.
+
+Q16. Delete the employee with the highest salary from the table. If multiple employees have the same highest salary, delete only one employee.
+
+Q17. Delete only the lowest-paid employee who belongs to IT or HR, has at least 3 years of experience, and earns less than ₹70,000.
+
+Q18. Delete only the highest-paid Active employee having at least 5 years of experience.
+
+Q19. Delete only the lowest-paid employee who is neither from HR nor Sales, has at least 3 years of experience, and earns below ₹70,000.
+
+Q20. Delete all employees who satisfy either of the following conditions:
+
+IT employees having at least 5 years of experience and salary below ₹80,000
+Finance employees having salary below ₹65,000
+*/
+
+create database Staff_Management_System2;
+
+use Staff_Management_System2;
+
+CREATE TABLE staff_delete (
+    staff_id INT PRIMARY KEY AUTO_INCREMENT,
+    staff_name VARCHAR(50),
+    department VARCHAR(30),
+    city VARCHAR(30),
+    salary DECIMAL(10,2),
+    experience INT,
+    age INT,
+    joining_date DATE,
+    status VARCHAR(20)
+);
+
+
+INSERT INTO staff_delete
+(staff_name, department, city, salary, experience, age, joining_date, status)
+VALUES
+('Aarav', 'IT', 'Indore', 48000, 3, 26, '2022-04-15', 'Active'),
+('Bhavna', 'HR', 'Bhopal', 56000, 5, 31, '2020-08-20', 'Active'),
+('Chetan', 'Finance', 'Delhi', 62000, 7, 35, '2018-03-10', 'Active'),
+('Divya', 'IT', 'Pune', 78000, 9, 38, '2016-11-05', 'Active'),
+('Eshan', 'Sales', 'Indore', 51000, 4, 29, '2021-06-18', 'Inactive'),
+('Farah', 'HR', NULL, 68000, 6, 34, '2019-01-25', 'Active'),
+('Gaurav', 'Finance', 'Mumbai', 74000, 8, 40, '2017-09-12', 'Active'),
+('Heena', 'IT', 'Delhi', 59000, 5, 30, '2020-02-17', 'Inactive'),
+('Ishaan', 'Sales', 'Pune', 45000, 2, 25, '2023-01-10', 'Active'),
+('Jaya', 'HR', 'Indore', 72000, 7, 36, '2018-07-22', 'Active');
+
+
+
+DELETE FROM staff_delete WHERE staff_id = 1;
+
+DELETE FROM staff_delete WHERE department = 'Sales';
+
+DELETE FROM staff_delete WHERE salary < 50000;
+
+DELETE FROM staff_delete WHERE department = 'HR' AND experience >= 5;
+
+
+DELETE FROM staff_delete WHERE city IN ('Indore', 'Bhopal');
+
+
+DELETE FROM staff_delete WHERE department NOT IN ('IT', 'Finance');
+
+
+DELETE FROM staff_delete WHERE salary BETWEEN 50000 AND 65000;
+
+DELETE FROM staff_delete WHERE salary BETWEEN 50000 AND 65000;
+
+DELETE FROM staff_delete WHERE staff_name LIKE 'D%';
+
+
+DELETE FROM staff_delete WHERE city IS NULL;
+
+
+DELETE FROM staff_delete WHERE joining_date < '2020-01-01' AND salary >= 60000;
+
+
+DELETE FROM staff_delete WHERE department IN ('IT', 'HR') AND experience >= 3 AND salary < 70000;
+
+
+DELETE FROM staff_delete WHERE department <> 'Sales' AND salary > 55000 AND status = 'Active';
+
+
+DELETE FROM staff_delete WHERE department IN ('Finance', 'HR') AND salary < 65000;
+
+
+DELETE FROM staff_delete ORDER BY salary ASC LIMIT 1;
+
+
+DELETE FROM staff_delete ORDER BY salary DESC LIMIT 1;
+
+
+DELETE FROM staff_delete WHERE department IN ('IT', 'HR') AND experience >= 3 AND salary < 70000 ORDER BY salary ASC LIMIT 1;
+
+
+DELETE FROM staff_delete WHERE status = 'Active' AND experience >= 5 ORDER BY salary DESC LIMIT 1;
+
+
+DELETE FROM staff_delete WHERE department NOT IN ('HR', 'Sales') AND experience >= 3 AND salary < 70000 ORDER BY salary ASC LIMIT 1;
+
+
+DELETE FROM staff_delete WHERE (department = 'IT' AND experience >= 5 AND salary < 80000) OR (department = 'Finance' AND salary < 65000);
+

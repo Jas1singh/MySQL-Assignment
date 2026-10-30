@@ -70,4 +70,4 @@ VALUES
 DESC product;
 
 
-SELECT * FROM shop_db.product;
+SELECT * FROM product;
