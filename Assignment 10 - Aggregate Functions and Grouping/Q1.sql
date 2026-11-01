@@ -106,7 +106,7 @@ total sales is greater than 20,000
 USE Group_By_Clause;
 
 
-create table sales (sale_id INT, customer_name VARCHAR(50), city VARCHAR(30), category VARCHAR(30), product VARCHAR(50), quantity int, price DECIMAL(10,2), discount DECIMAL(10,2), sale_date date, payment_method ENUM('UPI','Card','Cash','Net Banking'), status ENUM('Completed','Pending','Cancelled'), customer_type ENUM('New','Regular','Premium'));
+create table sales (sale_id INT AUTO_INCREMENT, customer_name VARCHAR(50), city VARCHAR(30), category VARCHAR(30), product VARCHAR(50), quantity int, price DECIMAL(10,2), discount DECIMAL(10,2), sale_date date, payment_method ENUM('UPI','Card','Cash','Net Banking'), status ENUM('Completed','Pending','Cancelled'), customer_type ENUM('New','Regular','Premium'));
 
 INSERT INTO sales
 (customer_name, city, category, product, quantity, price, discount,
