@@ -23,6 +23,10 @@ Try deleting a department and observe what happens to the employees under that d
 
 */
 
+create database Foreign_Key;
+
+use Foreign_Key;
+
 CREATE TABLE Departments (DepartmentID INT PRIMARY KEY AUTO_INCREMENT, DepartmentName VARCHAR(100) NOT NULL UNIQUE);
 
 

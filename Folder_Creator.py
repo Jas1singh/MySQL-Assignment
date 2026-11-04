@@ -2,14 +2,14 @@ import os
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-folder_name = os.path.join(script_dir, "Assignment 11 - Foreign Key")
+folder_name = os.path.join(script_dir, "Assignment 14 - 100 SubQueries")
 
 os.makedirs(folder_name, exist_ok=True)
 
-for i in range(1,5):
+for i in range(1,2):
     file_path = os.path.join(folder_name, f"Q{i}.sql")
     with open(file_path, "w") as file:
-        file.write(f'''# Assignment 11 - Foreign Key \n\n/*\n Question {i}: \n\n*/\n\n''')
+        file.write(f'''# Assignment 14 - 100 SubQueries \n\n/*\n Question {i}: \n\n*/\n\n''')
 
 print("Created successfully!")
 print("Folder:", folder_name)

@@ -19,7 +19,7 @@ Score (NOT NULL, CHECK Score BETWEEN 0 AND 100)
 Insert sample data (at least 3 students, 3 exams, and 5 results).
 Delete a student and check if their results are removed automatically.
 Update an exam’s subject name and observe the effect.
-
+ 
 */
 
 
